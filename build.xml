@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="junction-point-hook" basedir="." default="deploy">
+	<import file="../../hm-portal/rahmen6.2/liferay-plugins-sdk/hooks/build-common-hook.xml" />
+</project>

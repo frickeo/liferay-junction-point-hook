@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+<hook>
+  <portal-properties>portal.properties</portal-properties>
+  <language-properties>/content/Language.properties</language-properties>
+  <custom-jsp-dir>/WEB-INF/jsp</custom-jsp-dir>
+  <custom-jsp-global>true</custom-jsp-global>
+  <service>
+    <service-type>com.liferay.portal.service.LayoutLocalService</service-type>
+    <service-impl>de.hansemerkur.liferay.junctionpoint.service.JunctionPointLayoutLocalServiceWrapper</service-impl>
+  </service>
+  <servlet-filter>
+    <servlet-filter-name>Junction Point Filter</servlet-filter-name>
+    <servlet-filter-impl>de.hansemerkur.liferay.junctionpoint.hook.filter.JunctionPointFilter</servlet-filter-impl>
+  </servlet-filter>
+  <servlet-filter-mapping>
+    <servlet-filter-name>Junction Point Filter</servlet-filter-name>
+    <before-filter>Secure Main Servlet Filter</before-filter>
+    <url-pattern>/c/portal/layout</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </servlet-filter-mapping>
+</hook>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Zur Aktivierung der Spring-Config muss eine service.properties angelegt werden 
+     (siehe http://www.liferay.com/de/community/wiki/-/wiki/Main/Adding+Spring+Capabilitites+to+Hook)
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+  <bean id="de.hansemerkur.liferay.junctionpoint.util.JunctionPointUtil" class="de.hansemerkur.liferay.junctionpoint.util.JunctionPointUtil">
+    <property name="junctionPoint">
+      <bean class="de.hansemerkur.liferay.junctionpoint.util.JunctionPointImpl" />
+    </property>
+  </bean>
+</beans>
